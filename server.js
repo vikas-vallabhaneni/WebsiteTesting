@@ -4,12 +4,12 @@ var server = express();
 var bodyParser = require("body-parser");
 var fs = require("fs");
 
-/*
 const bcrypt = require('bcrypt')
 const path = require('path');
 const passport = require('passport');
 const flash = require('express-flash')
 const session = require('express-session')
+/*
 const initializePassport = require ('./passport-config');
 const { ServerResponse } = require('http');
 const methodOverride = require('method-override')
@@ -54,7 +54,7 @@ server.use(methodOverride('_method'))
 
 
 server.get("/", function(req, res){
-    res.send("4:16")
+    res.send("4:24")
 })
 
 server.listen(process.env.PORT || 3000)
