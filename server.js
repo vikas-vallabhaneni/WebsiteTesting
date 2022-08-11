@@ -13,9 +13,7 @@ const session = require('express-session')
 
 
 const initializePassport = require (path.join(__dirname, 'public/javascripts/passport-config'));
-/*
 const { ServerResponse } = require('http');
-/*
 const methodOverride = require('method-override')
 initializePassport(
     passport, 
@@ -59,7 +57,7 @@ server.use(methodOverride('_method'))
 
 
 server.get("/", function(req, res){
-    res.send("4:24")
+    res.send("4:58")
 })
 
 server.listen(process.env.PORT || 3000)
