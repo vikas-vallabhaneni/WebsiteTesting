@@ -3,15 +3,18 @@ var express = require("express");
 var server = express();
 var bodyParser = require("body-parser");
 var fs = require("fs");
-
 const bcrypt = require('bcrypt')
 const path = require('path');
 const passport = require('passport');
 const flash = require('express-flash')
 const session = require('express-session')
-/*
+
+
+
+
 const initializePassport = require ('./passport-config');
 const { ServerResponse } = require('http');
+/*
 const methodOverride = require('method-override')
 initializePassport(
     passport, 
@@ -19,6 +22,7 @@ initializePassport(
     id => users.find(user => user.id === id)
 
 );
+/*
 const pathToDataFile = path.join(__dirname, '..', 'files', 'data.txt');
 const PORT = process.env.port || 3000;
 server.use(express.static("public"));
