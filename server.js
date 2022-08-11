@@ -12,7 +12,7 @@ const session = require('express-session')
 
 
 
-const initializePassport = require ('./passport-config');
+const initializePassport = require (path.join(__dirname, 'public/javascripts/passport-config'));
 /*
 const { ServerResponse } = require('http');
 /*
