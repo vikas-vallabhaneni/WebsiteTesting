@@ -21,7 +21,6 @@ initializePassport(
     id => users.find(user => user.id === id)
 
 );
-/*
 const pathToDataFile = path.join(__dirname, '..', 'files', 'data.txt');
 const PORT = process.env.port || 3000;
 server.use(express.static("public"));
@@ -36,7 +35,6 @@ server.use(session({
 server.use(passport.initialize())
 server.use(passport.session())
 server.use(methodOverride('_method'))
-*/
 
 
 
