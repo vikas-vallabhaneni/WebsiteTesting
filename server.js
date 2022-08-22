@@ -8,10 +8,6 @@ const path = require('path');
 const passport = require('passport');
 const flash = require('express-flash')
 const session = require('express-session')
-
-
-
-
 const initializePassport = require (path.join(__dirname, 'public/javascripts/passport-config'));
 const { ServerResponse } = require('http');
 const methodOverride = require('method-override')
@@ -35,8 +31,20 @@ server.use(session({
 server.use(passport.initialize())
 server.use(passport.session())
 server.use(methodOverride('_method'))
+// array to hold assignment entries
+var assignmentEntries;
+// array to hold user information
+const users = []
 
+// reads the file and populates assignmentEntries array
+fs.readFile(pathToDataFile, 'utf-8', (err, data) => {
+    assignmentEntries = data.split("\r\n");
+})
 
+// loads home page
+server.get("/", function(req, res){
+    res.render("index.ejs");
+})
 
 
 
@@ -55,7 +63,7 @@ server.use(methodOverride('_method'))
 
 
 server.get("/", function(req, res){
-    res.send("4:58")
+    res.send("2:45")
 })
 
 server.listen(process.env.PORT || 3000)
