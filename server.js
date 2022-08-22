@@ -17,7 +17,7 @@ initializePassport(
     id => users.find(user => user.id === id)
 
 );
-const pathToDataFile = path.join(__dirname, '..', 'files', 'data.txt');
+const pathToDataFile = path.join(__dirname, 'public', 'files', 'data.txt');
 const PORT = process.env.port || 3000;
 server.use(express.static("public"));
 server.use(bodyParser.urlencoded({extended: true}));
