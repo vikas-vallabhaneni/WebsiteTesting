@@ -3,7 +3,7 @@
 // used npm install -g nodemon
 
 const dotenv = require('dotenv').config()
-
+/*
 // declare variables
 var express = require("express");
 var server = express();
@@ -279,3 +279,4 @@ function checkNotAuthenticated(req, res, next){
 
     
 }
+*/
