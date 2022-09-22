@@ -383,6 +383,72 @@ function clearAllBlocks(){
     }
 }
 
+
+if(localStorage.length == 0){
+    // today (day 0)
+    let td = new Date();
+    addBlockToStorage(td.getMonth()+1, td.getDate(), td.getFullYear(), "Test", "limegreen", "11:00");
+    addBlockToStorage(td.getMonth()+1, td.getDate(), td.getFullYear(), "Essay", "darkorchid", "23:59");
+    addBlockToStorage(td.getMonth()+1, td.getDate(), td.getFullYear(), "Do the dishes", "dodgerblue", "19:00");
+    addBlockToStorage(td.getMonth()+1, td.getDate(), td.getFullYear(), "Project 1", "hotpink", "23:59");
+    // +1
+    td.setDate(td.getDate() + 1);
+    addBlockToStorage(td.getMonth()+1, td.getDate(), td.getFullYear(), "HW 3", "limegreen", "23:59");
+    // +2
+    td.setDate(td.getDate() + 1);
+    addBlockToStorage(td.getMonth()+1, td.getDate(), td.getFullYear(), "Chapter 7 Reading", "darkorchid", "23:59");
+    addBlockToStorage(td.getMonth()+1, td.getDate(), td.getFullYear(), "Vocab Quiz", "rgb(254, 39, 18)", "23:59");
+    // +3
+    td.setDate(td.getDate() + 1);
+    addBlockToStorage(td.getMonth()+1, td.getDate(), td.getFullYear(), "Extra Credit Quiz", "rgb(255, 103, 0)", "23:59");
+    // +4
+    td.setDate(td.getDate() + 1);
+    // +5
+    td.setDate(td.getDate() + 1);
+    addBlockToStorage(td.getMonth()+1, td.getDate(), td.getFullYear(), "Apply for jobs", "dodgerblue", "23:59");
+    addBlockToStorage(td.getMonth()+1, td.getDate(), td.getFullYear(), "Chapter 8 Reading", "darkorchid", "23:59");
+    // +6
+    td.setDate(td.getDate() + 1);
+    // +7
+    td.setDate(td.getDate() + 1);
+    addBlockToStorage(td.getMonth()+1, td.getDate(), td.getFullYear(), "Project 2", "hotpink", "23:59");
+    // +8
+    td.setDate(td.getDate() + 1);
+    addBlockToStorage(td.getMonth()+1, td.getDate(), td.getFullYear(), "HW 4", "limegreen", "23:59");
+    // +9
+    td.setDate(td.getDate() + 1);
+    addBlockToStorage(td.getMonth()+1, td.getDate(), td.getFullYear(), "Chapter 9 Reading", "darkorchid", "23:59");
+    // -1
+    td.setDate(new Date().getDate() - 1);
+    // -2
+    td.setDate(td.getDate() - 1);
+    addBlockToStorage(td.getMonth()+1, td.getDate(), td.getFullYear(), "Chapter 6 Reading", "darkorchid", "23:59");
+    // -3
+    td.setDate(td.getDate() - 1);
+    addBlockToStorage(td.getMonth()+1, td.getDate(), td.getFullYear(), "Take car for inspection", "dodgerblue", "23:59");
+    addBlockToStorage(td.getMonth()+1, td.getDate(), td.getFullYear(), "Finish Study Guide", "rgb(255, 103, 0)", "13:30");
+    // -4
+    td.setDate(td.getDate() - 1);
+    addBlockToStorage(td.getMonth()+1, td.getDate(), td.getFullYear(), "Chapter 5 Reading", "darkorchid", "23:59");
+    // -5
+    td.setDate(td.getDate() - 1);
+    // -6
+    td.setDate(td.getDate() - 1);
+    addBlockToStorage(td.getMonth()+1, td.getDate(), td.getFullYear(), "Problem Set", "rgb(255, 246, 0)", "23:59");
+    addBlockToStorage(td.getMonth()+1, td.getDate(), td.getFullYear(), "HW 2", "limegreen", "23:59");
+    // -7
+    td.setDate(td.getDate() - 1);
+    addBlockToStorage(td.getMonth()+1, td.getDate(), td.getFullYear(), "Project Warmup", "hotpink", "23:59");
+    // -8
+    td.setDate(td.getDate() - 1);
+    // -9
+    td.setDate(td.getDate() - 1);
+    addBlockToStorage(td.getMonth()+1, td.getDate(), td.getFullYear(), "Chapter 4 Reading", "darkorchid", "23:59");
+    
+    td.setDate(td.getDate() - 365);
+    addBlockToStorage(td.getMonth()+1, td.getDate(), td.getFullYear(), "temp", "darkorchid", "23:59");
+}
+
 // sets the current day backround to be blue
 document.getElementById("day-" + new Date().getDay()).classList.add("current-day");
 
@@ -442,9 +508,18 @@ document.getElementById("addAssignmentBtn").addEventListener("click", async func
     createFormEventListener();
 });
 
+// when the reset demo button is clicked, it clears local storage and sends user back to '/'
+document.getElementById("resetDemoBtn").addEventListener("click", async function(){
+    // clear local storage
+    localStorage.clear();
+    // send user back to '/'
+    window.location.pathname = '/';
+});
+
 // correct timezone support for toDate Function
 Date.prototype.toDateInputValue = (function() {
     var local = new Date(this);
     local.setMinutes(this.getMinutes() - this.getTimezoneOffset());
     return local.toJSON().slice(0,10);
 });
+
