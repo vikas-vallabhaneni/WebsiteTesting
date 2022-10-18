@@ -383,7 +383,7 @@ function clearAllBlocks(){
     }
 }
 
-
+//
 if(localStorage.length == 0){
     // today (day 0)
     let td = new Date();
